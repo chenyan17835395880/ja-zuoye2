@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object</title>
+
+	<script>
+		//json方法创建对象：
+		let zhnagsan = {};
+		
+
+		//构造函数
+		function person(){
+
+		}
+		//实例化
+		let zhangsan=new person();
+		let lisi=new person();
+
+		//添加属性、方法
+		//谁    什么   等于
+		zhangsan.age=18;
+		zhangsan.name="zhangsan";
+		zhangsan.say=function(){
+			alert("haha");
+		}
+		console.log(zhangsan);//zhangsan{age:18,name:zhangsan}
+		zhangsan.say();//弹出haha
+		
+		lisi.sex="男";
+		lisi.age=25;
+		console.log(lisi);
+
+		//访问
+		//谁的什么
+		// zhnagsan.name
+		console.log(zhangsan.name);
+		console.log(zhangsan.age);
+		console.log(lisi.sex);//男
+
+
+
+	</script>
+
+
+</head>
+<body>
+	
+</body>
+</html>

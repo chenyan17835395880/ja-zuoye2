@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浅拷贝、深拷贝</title>
+	
+	<script>
+		//浅拷贝:传地址，两个数组为一个地址
+		var arr=[1,2,3,4,5,6]
+		var arr1=arr;
+		console.log(arr1);
+		console.log(arr);
+		arr[2]=8;
+		console.log(arr);
+		console.log(arr1);
+		arr1[3]="a";
+		console.log(arr);
+		console.log(arr1);
+
+		//深拷贝：传值，两个数组分别为各自的地址
+		var arr=[1,2,3,4,5,6];
+		var arr1=[];
+		for(i=0;i<arr.length;i++){
+				arr1[i]=arr[i];
+		}
+		console.log(arr1);
+		console.log(arr);
+		arr[2]="bb";
+		console.log(arr);
+		console.log(arr1);
+		arr1[3]="cc";
+		console.log(arr);
+		console.log(arr1);
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

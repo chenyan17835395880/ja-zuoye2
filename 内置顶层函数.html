@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置顶层函数</title>
+
+	<script>
+		//内置顶层函数：在js内部提供函数，直接拿过来用，不需用考虑作用域
+		/*escape()  unescape()  Number()   String()   
+		  Boolean()   parseInt()  parseFloat()  isNaN()*/
+		
+		//用法： /*function*/ Number()
+		// let str="掌声";
+		console.log(escape("掌声"));/*--对汉字进行编码--*/
+		console.log(unescape("%u638C%u58F0"));/*--解码--*/
+
+		console.log(Number(0b111));
+		console.log(Number("0b111"));//7
+		/*--把其他类型转化为数字：必须是数字型的字符串才能转换为数字，其余都为NaN*/
+		console.log(Number(true));/*1*/
+		console.log(Number(null));/*0*/
+		console.log(Number(undefined));/*NaN*/
+		console.log(Number("1230"));/*1230*/
+		console.log(Number("00123"));/*123---------------字符串中，数字前面的零无效*/
+		console.log(Number(00123));/*0默认为8进制 83*/
+		console.log(Number(0123));/*0默认为8进制 83*/
+		console.log(Number(01239));/*1239*/
+		console.log(Number(123.00));/*123 ----------小数点后面的00无意义*/
+		console.log(Number(123.01));/*123.01 ----------小数点后面的00无意义*/
+		console.log(Number("123.00"));/*123---------------字符串中，小数点后面的00无意义*/
+		console.log(Number("123.01"));/*123.01*/
+		console.log(Number("123.01.2"));/*NaN 123.01.2为不合法的数字*/
+		console.log(Number("123px"));/*NaN*/
+		console.log(Number("abcb"));/*NaN*/
+		console.log(Number("true"));/*NaN*/
+		console.log(Number(""));/*0*/
+
+
+		// String();/*--加引号--*/
+		console.log(String("abd"));
+		console.log(String(123));
+
+
+
+		console.log(Boolean("")); //false(false/0/null/""/undefined/NaN)
+		console.log(Boolean([])); //true
+
+
+		// parseInt();
+		// 把一个字符串转换为整数：以数字、+、-或空格开头的字符串，转换从第一个数字字符开始，到第一个非数字字符结束，转换为一个整数
+		console.log(parseInt("100.5"));//100
+		console.log(parseInt("1234"));//1234
+		console.log(parseInt("0b1111"));//0
+		console.log(parseInt("100px"));//100
+		console.log(parseInt("100px200"));//100
+		console.log(parseInt("   100px200"));//100
+		console.log(parseInt("abc100px200"));//NaN
+
+
+		// parseFloat();//把一个字符串转换为小数
+		console.log(parseFloat("100.5px"));//100.5
+		console.log(parseFloat("1005px"));//1005,如果不是小数，不会在后面补小数点
+
+
+		//isNaN()  is not a number;//只要()里面能转换为数字,返回false
+		console.log(isNaN(false));//false
+		console.log(isNaN("avc"));//true
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>
